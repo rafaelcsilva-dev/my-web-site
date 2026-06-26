@@ -9,13 +9,15 @@
     gap: var(--s4);
 
     & .node-interactive {
-      min-width: 100%;
+      width: 100%;
     }
-  }
 
-  @media (max-width: 768px) {
-    & .node-interactive {
-      min-width: 40%;
+    @media (min-width: 769px) {
+      & .node-interactive {
+        width: calc(50% - (var(--s4) / 2));
+
+        min-width: 280px;
+      }
     }
   }
 }
