@@ -7,7 +7,7 @@ export default function Project() {
   return (
     <section className="projects-page">
       <Header
-        log="NET_STATUS: SECURE // REPO_V2.0 // PALETTE: MAGENTA_CYAN"
+        log="NET_STATUS: SECURE // REPO_V2.0 "
         title="PROJECTS"
         subtitle=""
       />

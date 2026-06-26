@@ -19,8 +19,8 @@ export default function NodeInteractive({
   return (
     <a
       onClick={(e) => {
-        e.preventDefault(); // Evita o comportamento padrão de recarregar a página
-        navigate(link); // Navega para a rota fornecida
+        e.preventDefault(); 
+        navigate(link); 
       }}
       href="#"
       className="node-interactive"

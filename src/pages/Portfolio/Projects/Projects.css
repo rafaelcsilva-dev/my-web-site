@@ -5,7 +5,17 @@
 
   .projects-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: var(--s4);
+
+    & .node-interactive {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & .node-interactive {
+      min-width: 40%;
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { useAppTheme } from "../../context/ThemeContext";
 import "./Header.css";
 
 interface HeaderProps {
@@ -7,9 +8,15 @@ interface HeaderProps {
 }
 
 export default function Header({ log, title, subtitle }: HeaderProps) {
+  // Puxa o estado global da paleta ativa
+  const { activeTheme } = useAppTheme();
+
   return (
     <header className="header-component">
-      <span>{log}</span>
+      {/* Junta o seu log padrão com o nome do tema atualizado em UPPERCASE */}
+      <span>
+        {log} // PALETTE: {activeTheme.toUpperCase()}
+      </span>
       <h1>{title}</h1>
       <p>{subtitle}</p>
     </header>

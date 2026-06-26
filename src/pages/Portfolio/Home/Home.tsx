@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <section className="home-page">
       <Header
-        log="NET_STATUS: SECURE // REPO_V2.0 // PALETTE: MAGENTA_CYAN"
+        log="NET_STATUS: SECURE // REPO_V2.0"
         title="HOME // MAIN_TERMINAL"
         subtitle="Desenvolvedor focado na construção de sistemas eficientes e arquiteturas de software limpas. Atuo na intersecção entre lógica computacional pura e desenvolvimento de interfaces reativas, documentando processos, protocolos de rede e implementações de infraestrutura em tempo real."
       />
