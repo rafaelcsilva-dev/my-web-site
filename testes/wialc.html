@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEV.RAFAEL // TERMINAL_HOME</title>
+    
+    <style>
+      :root {
+        --bg-main: #020204;
+        --bg-card: #080c14;
+        --neon-cyan: #00f0ff;
+        --neon-magenta: #ff0055;
+        --text-primary: #ffffff;
+        --text-muted: #4e6178;
+        --font-mono: "Courier New", Courier, monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        min-height: 100vh;
+        padding: 2rem 1.5rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+
+      /* FILTRO CRT SCREENLINES global */
+      body::before {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background:
+          linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%),
+          linear-gradient(
+            90deg,
+            rgba(255, 0, 85, 0.03),
+            rgba(0, 240, 255, 0.02),
+            rgba(0, 0, 255, 0.03)
+          );
+        z-index: 9999;
+        background-size:
+          100% 4px,
+          6px 100%;
+        pointer-events: none;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1000px;
+        z-index: 2;
+      }
+
+      /* NAVBAR COM DISPARADOR DO MENU */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+        padding-bottom: 0.75rem;
+        margin-bottom: 2rem;
+        font-size: 0.8rem;
+        color: var(--neon-cyan);
+      }
+      .brand {
+        font-weight: bold;
+        text-shadow: 0 0 5px var(--neon-cyan);
+      }
+
+      .menu-trigger {
+        background: none;
+        border: none;
+        font-family: var(--font-mono);
+        color: var(--neon-cyan);
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .menu-trigger:hover {
+        color: var(--neon-magenta);
+        text-shadow: 0 0 5px var(--neon-magenta);
+      }
+
+      /* ==========================================================================
+           INTERFACE DO MENU (NAV OVERLAY)
+           ========================================================================== */
+      .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(2, 2, 4, 0.98);
+        border: 2px solid var(--neon-cyan);
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /* Mecânica de sumir/aparecer via JS */
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease-in-out;
+      }
+      /* Quando ativo via JS, ele liga na tela */
+      .nav-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .close-menu {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background: none;
+        border: 1px solid var(--neon-magenta);
+        color: var(--neon-magenta);
+        font-family: var(--font-mono);
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        cursor: pointer;
+        box-shadow: 0 0 5px #ff005533;
+      }
+      .close-menu:hover {
+        background: rgba(255, 0, 85, 0.1);
+        box-shadow: 0 0 10px var(--neon-magenta);
+      }
+
+      .nav-title {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        letter-spacing: 2px;
+      }
+      .nav-links-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        list-style: none;
+      }
+
+      .nav-item-link {
+        font-size: 1.8rem;
+        color: var(--neon-cyan);
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.2s;
+        display: inline-block;
+      }
+      .nav-item-link::before {
+        content: "> ";
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .nav-item-link:hover {
+        color: var(--neon-magenta);
+        text-shadow: 0 0 8px var(--neon-magenta);
+      }
+      .nav-item-link:hover::before {
+        opacity: 1;
+        color: var(--neon-magenta);
+      }
+
+      /* ==========================================================================
+           COMPONENTES DA PÁGINA (ESTÁTICOS)
+           ========================================================================== */
+      .profile-section {
+        border-left: 3px solid var(--neon-magenta);
+        padding: 0 0 0 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .profile-log {
+        font-size: 0.7rem;
+        color: var(--neon-magenta);
+        margin-bottom: 0.4rem;
+        letter-spacing: 2px;
+      }
+      .profile-title {
+        font-size: 1.8rem;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+      .profile-title::after {
+        content: "█";
+        color: var(--neon-cyan);
+        animation: blink 0.8s infinite;
+      }
+      .profile-bio {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: #9ab0c7;
+        max-width: 780px;
+      }
+
+      .section-divider {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin: 2.5rem 0 1.25rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .section-divider::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+      }
+
+      .static-report {
+        padding: 1rem 0;
+        border-bottom: 1px dashed rgba(0, 240, 255, 0.1);
+      }
+      .static-meta {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        margin-bottom: 0.4rem;
+      }
+      .static-title {
+        font-size: 1.1rem;
+        color: var(--neon-cyan);
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+      }
+      .static-text {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: #8295a8;
+      }
+
+      /* ==========================================================================
+           COMPONENTES DA PÁGINA (INTERATIVOS)
+           ========================================================================== */
+      .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+      }
+      @media (max-width: 768px) {
+        .grid-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .interactive-module {
+        background-color: var(--bg-card);
+        border: 1px solid rgba(255, 0, 85, 0.3);
+        padding: 1.5rem 1.75rem;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        cursor: pointer;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .interactive-module::before,
+      .interactive-module::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        transition: all 0.2s;
+      }
+      .interactive-module::before {
+        top: -1px;
+        left: -1px;
+        border-top: 2px solid var(--neon-cyan);
+        border-left: 2px solid var(--neon-cyan);
+      }
+      .interactive-module::after {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 2px solid rgba(255, 0, 85, 0.4);
+        border-right: 2px solid rgba(255, 0, 85, 0.4);
+      }
+
+      .module-meta {
+        font-size: 0.7rem;
+        color: var(--neon-magenta);
+        font-weight: bold;
+        margin-bottom: 0.4rem;
+        letter-spacing: 1px;
+      }
+
+      .module-title {
+        font-size: 1.15rem;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+        color: #fff;
+        text-transform: uppercase;
+      }
+
+      .module-desc {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: #a2b4c7;
+        margin-bottom: 1.5rem;
+      }
+
+      .module-action-line {
+        margin-top: auto;
+        padding-top: 0.75rem;
+        border-top: 1px dashed rgba(255, 0, 85, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+        color: var(--neon-magenta);
+        font-weight: bold;
+      }
+
+      .arrow-indicator {
+        font-size: 1rem;
+        transition: transform 0.2s;
+      }
+
+      .interactive-module:hover {
+        border-color: var(--neon-cyan);
+        background-color: #0d1421;
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.12);
+      }
+
+      .interactive-module:hover::before {
+        border-color: var(--neon-magenta);
+        box-shadow: 0 0 6px var(--neon-magenta);
+      }
+
+      .interactive-module:hover::after {
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 6px var(--neon-cyan);
+      }
+
+      .interactive-module:hover .module-title {
+        color: var(--neon-cyan);
+        text-shadow: 0 0 6px var(--neon-cyan);
+      }
+      
+      .interactive-module:hover .module-action-line {
+        border-top-color: var(--neon-cyan);
+        color: var(--neon-cyan);
+        text-shadow: 0 0 4px var(--neon-cyan);
+      }
+      .interactive-module:hover .arrow-indicator {
+        transform: translateX(4px);
+      }
+
+      @keyframes blink {
+        0%,
+        49% {
+          opacity: 1;
+        }
+        50%,
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="nav-overlay" id="network-nav">
+      <button class="close-menu" id="btn-close-menu">[ CLOSE_TERMINAL ]</button>
+      <span class="nav-title">// SELECT_NETWORK_NODE</span>
+      <ul class="nav-links-list">
+        <li><a href="#" class="nav-item-link">01. PORTFÓLIO</a></li>
+        <li><a href="#" class="nav-item-link">02. CADERNO_ESTUDOS</a></li>
+        <li><a href="#" class="nav-item-link">03. CENTRAL_ARTIGOS</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <nav class="navbar">
+        <span class="brand">HOST://DEV.RAFAEL</span>
+        <button class="menu-trigger" id="btn-open-menu">[ NAV_MENU ]</button>
+      </nav>
+
+      <header class="profile-section">
+        <div class="profile-log">CORE_PROFILE // UNLOCK_SUCCESS</div>
+        <h1 class="profile-title">RAFAEL // DEPLOYED_AGENT</h1>
+        <p class="profile-bio">
+          Desenvolvedor focado na construção de sistemas eficientes e
+          arquiteturas de software limpas. Atuo na intersecção entre lógica
+          computacional pura e desenvolvimento de interfaces reativas,
+          documentando processos, protocolos de rede e implementações de
+          infraestrutura em tempo real.
+        </p>
+      </header>
+
+      <div class="section-divider">
+        01 // ESPECIFICAÇÕES_TÉCNICAS_DA_STACK (READ_ONLY)
+      </div>
+
+      <div class="grid-layout" style="gap: 2rem; margin-bottom: 1rem">
+        <div class="static-report">
+          <span class="static-meta">SUB_SYS // CLIENT_SIDE</span>
+          <h3 class="static-title">Engenharia de Interface</h3>
+          <p class="static-text">
+            Desenvolvimento de componentes reativos usando ecossistema
+            React/TypeScript. Foco absoluto em semântica estrutural, controle
+            preciso de estados globais e folhas de estilo matemáticas sem
+            bibliotecas externas infladas.
+          </p>
+        </div>
+        <div class="static-report">
+          <span class="static-meta">SUB_SYS // SERVER_SIDE</span>
+          <h3 class="static-title">Arquitetura de Serviços</h3>
+          <p class="static-text">
+            Modelagem de APIs robustas em ambientes Node.js, controle de
+            persistência com bancos relacionais, manipulação direta de soquetes
+            assíncronos e orquestração de servidores locais para automação
+            residencial.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-divider">
+        02 // CENTRAL_DE_DADOS_DINÂMICA (EXECUTE_LINK)
+      </div>
+
+      <div class="grid-layout">
+
+        <a href="#" class="interactive-module">
+          <span class="module-meta">PARTITION_01 // PUBLIC_LOGS</span>
+
+          <h2 class="module-title">Artigos & Insights</h2>
+
+          <p class="module-desc">
+            Textos estruturados detalhando a engenharia por trás de problemas
+            complexos, análises críticas de performance de software e guias
+            técnicos de arquitetura.
+          </p>
+
+          <div class="module-action-line">
+            <span>[ MOUNT_AND_EXECUTE ]</span>
+            <span class="arrow-indicator">>></span>
+          </div>
+        </a>
+
+        <a href="#" class="interactive-module">
+          <span class="module-meta">PARTITION_02 // RAW_KNOWLEDGE</span>
+          <h2 class="module-title">Caderno de Estudos</h2>
+          <p class="module-desc">
+            Minha base de documentação bruta. Notas de estudo profundas de
+            Redes, lógica computacional discreta, matrizes e revisões detalhadas
+            do ecossistema de engenharia.
+          </p>
+          <div class="module-action-line">
+            <span>[ MOUNT_AND_EXECUTE ]</span>
+            <span class="arrow-indicator">>></span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      const openBtn = document.getElementById("btn-open-menu");
+      const closeBtn = document.getElementById("btn-close-menu");
+      const navOverlay = document.getElementById("network-nav");
+
+      // Abre o terminal de navegação injetando a classe .active
+      openBtn.addEventListener("click", () => {
+        navOverlay.classList.add("active");
+      });
+
+      // Fecha o terminal de navegação removendo a classe
+      closeBtn.addEventListener("click", () => {
+        navOverlay.classList.remove("active");
+      });
+
+      // Atalho teclado: Fecha o menu se apertar 'Esc'
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          navOverlay.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

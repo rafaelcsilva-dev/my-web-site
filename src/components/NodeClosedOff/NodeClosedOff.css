@@ -1,0 +1,149 @@
+.node-closed-off-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 650px;
+  padding: var(--s5);
+  background-color: rgba(4, 6, 12, 0.6);
+  border: 1px solid var(--text-muted);
+  font-family: var(--font);
+
+  .error-code {
+    font-size: var(--text-small);
+    color: var(--color-secondary);
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: var(--s2);
+  }
+
+  .construction-title {
+    font-size: var(--text-h2);
+    color: var(--text-primary);
+    text-transform: uppercase;
+    margin-bottom: var(--s3);
+  }
+
+  .construction-text {
+    font-size: var(--text-small);
+    color: var(--text-secondary);
+    line-height: var(--text-h2);
+
+    .highlight {
+      color: var(--color-primary);
+      font-weight: bold;
+      text-shadow: 0 0 var(--s2) var(--color-primary-shadow);
+    }
+  }
+
+  .system-status-box {
+    background-color: var(--bg-container);
+    border: 1px solid var(--text-muted);
+    border-left: 3px solid var(--color-primary);
+    width: 100%;
+    padding: var(--s4);
+    margin-top: var(--s5);
+  }
+
+  .status-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-small);
+    font-weight: bold;
+    color: var(--text-primary);
+
+    .status-blink {
+      color: var(--color-primary);
+      animation: hardware-pulse 1.5s infinite ease-in-out;
+
+      &.failed {
+        color: var(--color-secondary);
+        text-shadow: 0 0 var(--s2) var(--color-secondary-shadow);
+      }
+    }
+
+    &.bytes {
+      color: var(--text-muted);
+    }
+  }
+
+  .progress-bar {
+    background-color: var(--bg-cards);
+    height: var(--s2);
+    width: 100%;
+    margin: var(--s3) 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--text-muted);
+
+    .progress-fill {
+      background: linear-gradient(
+        90deg,
+        var(--color-secondary),
+        var(--color-primary)
+      );
+      height: 100%;
+      transition: width 0.4s ease-out;
+    }
+  }
+
+  /* NOVA ÁREA DE SOCORRO DO VISITANTE (UX) */
+  .ux-rescue-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: var(--s4);
+    gap: var(--s3);
+    animation: fade-in-up 0.5s ease-out forwards;
+
+    .user-alert {
+      font-size: var(--text-small);
+      color: var(--text-primary);
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .abort-btn {
+      background: none;
+      border: 1px solid var(--color-secondary);
+      color: var(--color-secondary);
+      font-family: var(--font);
+      font-size: var(--text-small);
+      padding: var(--s2) var(--s3);
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: var(--color-secondary-shadow);
+        color: var(--text-primary);
+        box-shadow: 0 0 var(--s3) var(--color-secondary-shadow);
+      }
+    }
+  }
+}
+
+/* ANIMAÇÕES */
+@keyframes hardware-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEV.RAFAEL // ARTIGOS</title>
+    <style>
+      :root {
+        --bg-black: #000000;
+        --color-cyan: #00f3ff;
+        --color-pink: #ff2a5f;
+        --text-primary: #ffffff;
+        --text-secondary: #a5a9b4;
+        --text-muted: #3a3f4d;
+        --font-terminal: "Courier New", Courier, monospace;
+      }
+
+      body {
+        background-color: var(--bg-black);
+        color: var(--text-primary);
+        margin: 0;
+        padding: 32px 24px;
+        font-family: var(--font-terminal);
+      }
+
+      .main-wrapper {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      /* Topbar limpa sem container */
+      .top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .top-nav .host {
+        color: var(--color-cyan);
+      }
+
+      .top-nav .menu-btn {
+        color: var(--color-cyan);
+        text-decoration: none;
+      }
+
+      /* Banner Principal com Scanlines */
+      .hero-banner {
+        border-left: 3px solid var(--color-pink);
+        padding-left: 16px;
+        position: relative;
+        background: linear-gradient(
+          rgba(15, 17, 26, 0.3) 50%,
+          rgba(0, 0, 0, 0.3) 50%
+        );
+        background-size: 100% 4px; /* Efeito Scanline */
+      }
+
+      .hero-banner .meta-status {
+        color: var(--color-pink);
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .hero-banner h1 {
+        font-size: 28px;
+        color: var(--text-primary);
+        margin: 0 0 12px 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .hero-banner p {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Divisores idênticos ao print */
+      .section-divider {
+        color: var(--text-muted);
+        font-size: 13px;
+        letter-spacing: 1px;
+        margin: 16px 0;
+        border-bottom: 1px dashed var(--text-muted);
+        padding-bottom: 4px;
+      }
+
+      /* Grid do Painel de Logs Inferior */
+      .terminal-log-area {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .terminal-log-area .prompt-path {
+        color: var(--color-pink);
+        font-size: 14px;
+      }
+
+      /* Tabela sem bordas de caixa, apenas linhas limpas */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      .data-table th {
+        color: var(--color-cyan);
+        font-weight: bold;
+        padding-bottom: 12px;
+        border-bottom: 1px dashed var(--text-muted);
+        text-transform: uppercase;
+      }
+
+      .data-table td {
+        padding: 16px 0;
+        color: var(--text-secondary);
+      }
+
+      .data-table td.date-cell {
+        width: 20%;
+      }
+
+      .data-table td.title-cell {
+        color: var(--text-primary);
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .data-table td.title-cell:hover {
+        color: var(--color-cyan);
+      }
+
+      .data-table td.cat-cell {
+        text-align: right;
+        text-transform: uppercase;
+        width: 25%;
+      }
+
+      .system-footer-note {
+        color: var(--text-muted);
+        font-size: 13px;
+        margin: 12px 0 0 0;
+      }
+
+      /* Prompt final do Rodapé */
+      .terminal-interactive-footer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        margin-top: 16px;
+      }
+
+      .terminal-interactive-footer .user-prefix {
+        color: var(--color-cyan);
+      }
+
+      .terminal-interactive-footer .command-string {
+        color: var(--color-cyan);
+      }
+
+      .terminal-interactive-footer .blinking-block-cursor {
+        color: var(--color-pink);
+        animation: cursor-wait 1.06s infinite steps(2, start);
+      }
+
+      @keyframes cursor-wait {
+        0%,
+        100% {
+          visibility: hidden;
+        }
+        50% {
+          visibility: visible;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <nav class="top-nav">
+        <span class="host">HOST://DEV.RAFAEL</span>
+        <a href="#" class="menu-btn">[ MENU ]</a>
+      </nav>
+
+      <header class="hero-banner">
+        <div class="meta-status">
+          NET_STATUS: SECURE // REPO_V2.0 // PALETTE: MAGENTA_CYAN
+        </div>
+        <h1>ARTIGOS // CONHECIMENTO_LOG</h1>
+        <p>
+          Repositório descentralizado contendo documentações técnicas, artigos
+          sobre arquitetura de sistemas, engenharia de interface e resoluções de
+          problemas complexos de software.
+        </p>
+      </header>
+
+      <div class="section-divider">
+        01 // REGISTROS DE SISTEMA DISPONÍVEIS
+        (READ_ONLY)-----------------------
+      </div>
+
+      <div class="terminal-log-area">
+        <div class="prompt-path">dev.rafael@dev-rafael:~/artigos$</div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>DATA</th>
+              <th>ARTIGO</th>
+              <th style="text-align: right">CATEGORIA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="date-cell">2026-05-15</td>
+              <td class="title-cell">O Infinito é Bizarro</td>
+              <td class="cat-cell">Probabilidade</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="system-footer-note">
+          * NOTA: Selecione um link acima para ler o arquivo decodificado
+          correspondente.
+        </p>
+      </div>
+
+      <div class="terminal-interactive-footer">
+        <span class="user-prefix">guest@decode_archive:~$</span>
+        <span class="command-string">cat index_instructions.txt</span>
+        <span class="blinking-block-cursor">█</span>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const rows = document.querySelectorAll(".title-cell");
+        rows.forEach((row) => {
+          row.addEventListener("click", (e) => {
+            console.log(`Executing read stream for: ${e.target.innerText}`);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

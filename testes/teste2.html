@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC_KERNEL // UNRESOLVED_NODE</title>
+    <style>
+        :root {
+            --bg-main: #020204;
+            --bg-card: #050811;
+            --neon-primary: #00f0ff;
+            --neon-secondary: #ff0055;
+            --text-primary: #ffffff;
+            --text-muted: #3a4b5e;
+            --font-mono: "Courier New", Courier, monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        /* FILTRO CRT DE SCANLINES */
+        body::before {
+            content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+            z-index: 9999; background-size: 100% 4px; pointer-events: none;
+        }
+
+        .terminal-box {
+            width: 100%;
+            max-width: 600px;
+            background-color: rgba(4, 6, 12, 0.95);
+            border: 1px solid var(--text-muted);
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* DETALHE DA BORDA DO TERMINAL MILITARIZADO */
+        .terminal-box::after {
+            content: "SEC_NODE_SECURE";
+            position: absolute;
+            top: -10px; left: 20px;
+            background-color: var(--bg-main);
+            padding: 0 5px;
+            font-size: 0.65rem;
+            color: var(--neon-secondary);
+            font-weight: bold;
+        }
+
+        .log-line {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            color: #7a93ad;
+        }
+
+        .log-line.error { color: var(--neon-secondary); }
+        .log-line.success { color: var(--neon-primary); }
+
+        /* DECODIFICADOR TEXTUAL (ONDE RODA O JS) */
+        .crypto-matrix {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            word-wrap: break-word;
+            text-align: center;
+            min-height: 3.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .crypto-matrix.failed {
+            color: var(--neon-secondary);
+            border-color: var(--neon-secondary);
+            text-shadow: 0 0 8px var(--neon-secondary);
+            animation: glitch-flash 0.4s infinite alternate;
+        }
+
+        @keyframes glitch-flash {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; border-color: rgba(255, 0, 85, 0.4); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-box">
+        <div class="log-line">> INITIATING NODE RESOLUTION...</div>
+        <div class="log-line">> REQUESTING ROUTE: <span style="color: #fff;">/caderno-de-estudos</span></div>
+        <div class="log-line">> TARGET FILE: index.template.dat</div>
+        <div class="log-line">> STATUS: ATTEMPTING HANDSHAKE...</div>
+        
+        <div class="crypto-matrix" id="matrix-display">--------</div>
+
+        <div id="terminal-footer">
+            <div class="log-line">> DECRYPTING INTERFACE BLOCKS...</div>
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById("matrix-display");
+        const footer = document.getElementById("terminal-footer");
+
+        // Caracteres que simulam código binário/hexadecimal quebrando
+        const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_@#$X";
+        let cycles = 0;
+        const maxCycles = 40; // Quantas vezes ele vai tentar embaralhar antes de quebrar
+
+        function runBruteForceSimulation() {
+            cycles++;
+
+            if (cycles < maxCycles) {
+                // Gera uma string de caracteres completamente aleatórios
+                let randomString = "";
+                for (let i = 0; i < 15; i++) {
+                    randomString += chars[Math.floor(Math.random() * chars.length)];
+                }
+                display.innerText = randomString;
+                display.style.color = "rgba(0, 240, 255, 0.7)"; // Azul durante o processo
+
+                // Continua rodando em velocidade alta
+                setTimeout(runBruteForceSimulation, 50);
+            } else {
+                // FIM DO CICLO: O sistema falha e mostra a mensagem real de desenvolvimento
+                display.innerText = "LINK_CORRUPTED_404";
+                display.classList.add("failed");
+
+                // Injeta as linhas de falha de sistema embaixo
+                footer.innerHTML = `
+                    <div class="log-line error">>> [FATAL]: COMPILATION_INCOMPLETE</div>
+                    <div class="log-line error">>> REASON: Módulo em fase de desenvolvimento de software.</div>
+                    <div class="log-line success">>> status: host operacional, aguardando deploy do front-end.</div>
+                `;
+            }
+        }
+
+        // Inicializa o efeito
+        setTimeout(runBruteForceSimulation, 400);
+    </script>
+</body>
+</html>
