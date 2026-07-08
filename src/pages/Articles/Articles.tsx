@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 import "./Articles.css";
-import { articles } from "../../data/articles.ts";
+//import { articles } from "../../data/articles.ts";
 
 import Nav from "../../components/Nav/Nav";
 import Menu from "../../components/Menu/Menu";
 import NodeClosedOff from "../../components/NodeClosedOff/NodeClosedOff.tsx";
-import NodeInteractiveTwo from "../../components/NodeInteractiveTwo/NodeInteractiveTwo.tsx";
+//import NodeInteractiveTwo from "../../components/NodeInteractiveTwo/NodeInteractiveTwo.tsx";
 
 export default function Articles() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
