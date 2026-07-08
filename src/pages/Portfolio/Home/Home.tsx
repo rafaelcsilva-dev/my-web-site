@@ -48,7 +48,8 @@ export default function Home() {
 
       <div className="production-container">
         <NodeInteractive
-          link="#"
+          type="navigate"
+          link="./articles"
           meta="PARTITION_01 // PUBLIC"
           title="ARTIGOS"
           text="Textos estruturados detalhando a engenharia por trás de problemas
@@ -57,7 +58,8 @@ export default function Home() {
         />
 
         <NodeInteractive
-          link="#"
+          type="navigate"
+          link="./studies"
           meta="PARTITION_02 // RAW_KNOWLEDGE"
           title="ESTUDOS"
           text="Minha base de documentação bruta. Notas de estudo profundas de
