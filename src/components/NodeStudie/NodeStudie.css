@@ -1,0 +1,41 @@
+.node-studie {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+
+  padding: var(--s3);
+
+  background-color: var(--bg-container);
+  border: 1px solid var(--color-primary-shadow);
+
+  cursor: pointer;
+
+  & > span {
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+
+  & > h3 {
+    color: var(--text-primary);
+    font-weight: 100;
+  }
+
+  & div {
+    display: flex;
+    justify-content: space-between;
+
+    & span {
+      color: var(--text-muted);
+      font-size: var(--text-small);
+    }
+  }
+
+  &:hover {
+    border: 1px solid var(--color-primary);
+    box-shadow: 0px 0px 4px var(--color-primary);
+
+    & span {
+      color: var(--color-primary);
+    }
+  }
+}

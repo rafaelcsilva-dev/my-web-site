@@ -9,8 +9,8 @@ export default function Project() {
     <section className="projects-page">
       <Header
         log="NET_STATUS: SECURE // REPO_V2.0 "
-        title="PROJECTS"
-        subtitle=""
+        title="PROJECTS // DEPLOYED_MODULES"
+        subtitle="Catálogo de aplicações em produção e sistemas isolados. Aqui estão documentadas as soluções de backend, microsserviços e interfaces modulares construídas para suportar cargas críticas, otimização de consultas e alta performance de processamento."
       />
 
       <section className="projects-container">

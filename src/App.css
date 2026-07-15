@@ -113,6 +113,12 @@ a {
   text-decoration: none;
 }
 
+input {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 body {
   display: flex;
   justify-content: center;
