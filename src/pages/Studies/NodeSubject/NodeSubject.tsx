@@ -1,23 +1,20 @@
-import "./NodeStudie.css";
+import "./NodeSubject.css";
 
-interface NodeStudieProps {
-  meta: string;
+interface NodeSubjectProps {
   title: string;
   id: string;
   date: string;
   onClick: () => void;
 }
 
-export default function NodeStudie({
-  meta,
+export default function NodeSubject({
   title,
   id,
   date,
   onClick,
-}: NodeStudieProps) {
+}: NodeSubjectProps) {
   return (
-    <div className="node-studie" onClick={onClick}>
-      <span>{meta}</span>
+    <div className="node-subject" onClick={onClick}>
       <h3>{title}</h3>
 
       <div>

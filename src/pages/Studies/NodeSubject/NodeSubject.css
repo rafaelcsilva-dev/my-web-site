@@ -1,4 +1,4 @@
-.node-studie {
+.node-subject {
   display: flex;
   flex-direction: column;
   gap: var(--s2);
@@ -10,13 +10,8 @@
 
   cursor: pointer;
 
-  & > span {
-    color: var(--color-secondary);
-    font-weight: 600;
-  }
-
   & > h3 {
-    color: var(--text-primary);
+    color: var(--color-secondary);
     font-weight: 100;
   }
 
