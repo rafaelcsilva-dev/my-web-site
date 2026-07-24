@@ -19,7 +19,7 @@ export default function NodeSubject({
 
       <div>
         <span>ID: {id}</span>
-        <span>DATE: {date}</span>
+        <span>LAST UPDATE: {date}</span>
       </div>
     </div>
   );

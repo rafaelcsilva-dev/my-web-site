@@ -1,0 +1,11 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--s4);
+
+  & nav:nth-child(2) {
+    display: flex;
+    gap: var(--s3);
+  }
+}

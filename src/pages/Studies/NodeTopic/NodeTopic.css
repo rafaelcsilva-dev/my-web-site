@@ -9,21 +9,32 @@
 
   & summary {
     color: var(--text-secondary);
+    cursor: pointer;
   }
 
-  & p {
-    width: fit-content;
+  & div {
+    display: flex;
+    justify-content: space-between;
 
     margin-top: var(--s3);
-    margin-left: var(--s4);
 
-    color: var(--color-secondary);
-    text-decoration: underline;
+    & span:nth-child(1) {
+      margin-left: var(--s2);
 
-    cursor: pointer;
+      color: var(--color-secondary);
+      font-size: var(--text-body);
+      text-decoration: underline;
 
-    &:hover {
-      color: var(--color-primary);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    & span:nth-child(2) {
+      color: var(--color-secondary);
+      font-size: var(--text-body);
     }
   }
 
@@ -34,7 +45,9 @@
 
   &[open] {
     border-color: var(--color-primary);
+
     & summary {
+      margin-bottom: var(--s4);
       color: var(--color-primary);
     }
   }

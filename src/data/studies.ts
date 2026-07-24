@@ -1,72 +1,28 @@
 export const studies = [
   {
     title: "FRONTEND",
+    path: "frontend",
     id: "STU_001",
-    date: "2026-01-29",
+    date: "21/07/2026",
     topics: [
       {
-        title: "Fundamentos da Web",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
-      },
-      {
-        title: "Ecossistema e Produtividade",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
-      },
-      {
-        title: "Frameworks e Tipagem",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
-      },
-      {
-        title: "Ferramentas Avançadas e Performance",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
-      },
-    ],
-  },
+        title: "Introdução à Web",
+        documents: [
+          {
+            name: "bibliografia-recomendada",
+            date: "23/07/2026",
+          },
 
-  {
-    title: "BACKEND",
-    id: "STU_002",
-    date: "2026-10-01",
-    topics: [
-      {
-        title: "Ferramentas Avançadas e Performance",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
-      },
-    ],
-  },
+          {
+            name: "como-a-internet-funciona",
+            date: "23/07/2026",
+          },
 
-  {
-    title: "DESIGN",
-    id: "STU_003",
-    date: "2026-05-15",
-    topics: [
-      {
-        title: "Ferramentas Avançadas e Performance",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
-      },
-    ],
-  },
-
-  {
-    title: "REDES",
-    id: "STU_003",
-    date: "2026-05-15",
-    topics: [
-      {
-        title: "Ferramentas Avançadas e Performance",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
-      },
-    ],
-  },
-
-  {
-    title: "INTELIGÊNCIA ARTIFICIAL",
-    id: "STU_003",
-    date: "2026-05-15",
-    topics: [
-      {
-        title: "Ferramentas Avançadas e Performance",
-        documents: ["fundamentos-do-html", "estilizacao-com-css"],
+          {
+            name: "a-base-de-um-site",
+            date: "24/07/2026",
+          },
+        ],
       },
     ],
   },
