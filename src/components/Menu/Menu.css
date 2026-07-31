@@ -53,11 +53,13 @@
       border-bottom: 1px dashed var(--color-primary);
 
       & button {
+        justify-content: flex-start;
         padding: var(--s2);
         border: 1px solid transparent;
         color: var(--text-muted);
         font-size: var(--text-small);
         text-align: left;
+        
 
         &:hover {
           background-color: var(--color-primary-shadow);

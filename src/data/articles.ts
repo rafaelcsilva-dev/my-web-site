@@ -3,7 +3,7 @@ export const articles = [
     title: "O Infinito é Bizarro",
     subtitle: "Uma investigação sobre o infinito, o caos e o vazio do cosmos",
     link: "https://rafaelcsilva-dev.github.io/o-infinito-e-bizarro/",
-    size: "1.6KB",
+    size: "17KB",
   },
 
   /*

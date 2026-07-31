@@ -94,14 +94,6 @@ html[data-theme="virus"] {
   --color-secondary-shadow: #99002410;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  transition: all 0.3s;
-}
-
 button {
   display: flex;
 
@@ -119,10 +111,6 @@ input {
   background: none;
   border: none;
   outline: none;
-}
-
-body {
- 
 }
 
 #root {
