@@ -1,12 +1,12 @@
 export const articles = [
   {
     title: "O Infinito é Bizarro",
-    subtitle:
-      "Uma investigação sobre anomalias probabilísticas, paradoxos estatísticos e como a mente humana falha ao tentar processar eventos que tendem ao infinito puro.",
-    link: "#",
+    subtitle: "Uma investigação sobre o infinito, o caos e o vazio do cosmos",
+    link: "https://rafaelcsilva-dev.github.io/o-infinito-e-bizarro/",
     size: "1.6KB",
   },
 
+  /*
   {
     title: "Formiga de Langton",
     subtitle:
@@ -14,4 +14,5 @@ export const articles = [
     link: "#",
     size: "12.4KB",
   },
+  */
 ];

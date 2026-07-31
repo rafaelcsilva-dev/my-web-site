@@ -9,18 +9,13 @@ export const studies = [
         title: "Introdução à Web",
         documents: [
           {
-            name: "bibliografia-recomendada",
+            name: "bibliografia",
             date: "23/07/2026",
           },
 
           {
             name: "como-a-internet-funciona",
             date: "23/07/2026",
-          },
-
-          {
-            name: "a-base-de-um-site",
-            date: "24/07/2026",
           },
         ],
       },

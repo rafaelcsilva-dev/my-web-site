@@ -1,18 +1,20 @@
-# Como a Internet Funciona?
+# Como a internet funciona?
 
-## Como a Internet surgiu?
+**Autor:** dev.rafael &bull; **Publicado:** 27 de Julho de 2026 &bull; **Leitura:** 10 min
 
-A Internet surgiu durante um dos períodos mais tensos da história da humanidade: a **Guerra Fria**. Esse conflito, que começou após a Segunda Guerra Mundial, colocou duas grandes potências em disputa: os **Estados Unidos** e a **União Soviética**.
+## Como a internet surgiu?
+
+A Internet surgiu durante um dos períodos mais tensos da história da humanidade: a **[Guerra Fria](https://pt.wikipedia.org/wiki/Guerra_Fria)**. Esse conflito, que começou após a Segunda Guerra Mundial, colocou duas grandes potências em disputa: os **Estados Unidos** e a **União Soviética**.
 
 Apesar de não haver confrontos diretos entre os dois países, existia uma intensa corrida tecnológica, científica e militar. Cada lado buscava demonstrar superioridade em relação ao outro.
 
-Em **1957**, a União Soviética lançou o **Sputnik 1**, o primeiro satélite artificial da história. Sua principal função era apenas orbitar a Terra e transmitir sinais de rádio (os famosos "bips"), servindo como demonstração da capacidade tecnológica soviética.
+Em **1957**, a União Soviética lançou o **[Sputnik 1](https://pt.wikipedia.org/wiki/Sputnik-1)**, o primeiro satélite artificial da história. Sua principal função era apenas orbitar a Terra e transmitir sinais de rádio (os famosos "bips"), servindo como demonstração da capacidade tecnológica soviética.
 
-O lançamento do Sputnik causou grande preocupação nos Estados Unidos. Temendo que os soviéticos estivessem tecnologicamente muito à frente, o governo americano criou, em **1958**, a **DARPA (Defense Advanced Research Projects Agency)**, uma agência dedicada ao desenvolvimento de tecnologias estratégicas para fins militares.
+O lançamento do Sputnik causou grande preocupação nos Estados Unidos. Temendo que os soviéticos estivessem tecnologicamente muito à frente, o governo americano criou, em **1958**, a **[DARPA (Defense Advanced Research Projects Agency)](https://pt.wikipedia.org/wiki/Ag%C3%AAncia_de_Projetos_de_Pesquisa_Avan%C3%A7ada_de_Defesa)**, uma agência dedicada ao desenvolvimento de tecnologias estratégicas para fins militares.
 
 Uma das preocupações da DARPA era garantir que informações importantes não fossem perdidas caso uma base militar fosse destruída durante um possível ataque. A solução encontrada foi criar uma rede de computadores capaz de compartilhar informações entre diferentes centros de pesquisa, de forma que todos possuíssem cópias dos dados.
 
-Foi assim que nasceu a **ARPANET**, considerada a precursora da Internet.
+Foi assim que nasceu a **[ARPANET](https://pt.wikipedia.org/wiki/ARPANET)**, considerada a precursora da Internet.
 
 Inicialmente, a ARPANET possuía apenas quatro computadores conectados:
 
@@ -29,7 +31,7 @@ O objetivo principal dessa rede era permitir o compartilhamento de informações
 
 Os computadores utilizados na ARPANET eram fabricados por empresas diferentes e utilizavam sistemas distintos. Isso significava que eles não conseguiam se comunicar diretamente.
 
-Para resolver esse problema, foi criado o **NCP (Network Control Protocol)**, o primeiro protocolo de comunicação da ARPANET.
+Para resolver esse problema, foi criado o **[NCP (Network Control Protocol)](https://pt.wikipedia.org/wiki/NCP)**, o primeiro protocolo de comunicação da ARPANET.
 
 O NCP estabelecia uma linguagem comum entre os computadores, permitindo a troca de informações independentemente do fabricante.
 
@@ -41,17 +43,17 @@ Na década de 1970, dois pesquisadores desenvolveram tecnologias que mudariam co
 
 ### Bob Kahn
 
-Bob Kahn criou o **TCP (Transmission Control Protocol)**.
+[Bob Kahn](https://pt.wikipedia.org/wiki/Robert_Kahn) criou o **[TCP (Transmission Control Protocol)](https://pt.wikipedia.org/wiki/Protocolo_de_Controle_de_Transmiss%C3%A3o)**.
 
 Sua principal ideia era dividir grandes arquivos em pequenos pedaços chamados **pacotes**, permitindo que várias transmissões ocorressem simultaneamente na rede.
 
 ### Vint Cerf
 
-Vint Cerf desenvolveu o **IP (Internet Protocol)**.
+[Vint Cerf](https://pt.wikipedia.org/wiki/Vint_Cerf) desenvolveu o **[IP (Internet Protocol)](https://pt.wikipedia.org/wiki/Protocolo_de_Internet)**.
 
 O IP é responsável por identificar cada computador conectado à rede por meio de um endereço único, permitindo que os pacotes encontrem corretamente seu destino.
 
-A união dessas duas tecnologias originou o protocolo **TCP/IP**, que continua sendo utilizado até hoje, embora tenha passado por inúmeras evoluções ao longo das décadas.
+A união dessas duas tecnologias originou o protocolo **[TCP/IP](https://pt.wikipedia.org/wiki/TCP/IP)**, que continua sendo utilizado até hoje, embora tenha passado por inúmeras evoluções ao longo das décadas.
 
 Em **1º de janeiro de 1983**, conhecido como o **Flag Day**, toda a ARPANET passou oficialmente a utilizar o TCP/IP.
 
@@ -67,8 +69,8 @@ Em determinado momento, a rede tornou-se grande demais para ser administrada exc
 
 Por isso, ela foi dividida em diferentes redes:
 
-- **MILNET**, destinada às comunicações militares;
-- **NSFNET (National Science Foundation Network)**, voltada para universidades e pesquisa científica;
+- **[MILNET](https://pt.wikipedia.org/wiki/MILNET)**, destinada às comunicações militares;
+- **[NSFNET (National Science Foundation Network)](https://pt.wikipedia.org/wiki/National_Science_Foundation_Network)**, voltada para universidades e pesquisa científica;
 - outras redes comerciais.
 
 Essas redes precisavam se comunicar entre si. Assim surgiu o conceito de uma **rede de redes**, conhecido como **internetworking**.
@@ -83,7 +85,7 @@ Hoje a Internet é uma enorme rede mundial formada pela interligação de milhar
 
 Grande parte dessa comunicação internacional ocorre através de **cabos submarinos de fibra óptica**, instalados no fundo dos oceanos e responsáveis por transportar praticamente todo o tráfego entre os continentes.
 
-É possível visualizar esses cabos no site **Submarine Cable Map**.
+É possível visualizar esses cabos no site **[Submarine Cable Map](https://www.submarinecablemap.com/)**.
 
 Dentro de cada país, a distribuição da Internet é realizada por diferentes tecnologias, como:
 
@@ -128,23 +130,23 @@ Caso o usuário desejasse visualizar uma imagem, normalmente precisava baixá-la
 
 ## O surgimento da World Wide Web
 
-Embora muitas pessoas confundam os dois conceitos, **Internet** e **World Wide Web (WWW)** não são a mesma coisa.
+Embora muitas pessoas confundam os dois conceitos, **Internet** e não são a mesma coisa.
 
-Em **1989**, o cientista britânico **Tim Berners-Lee**, que trabalhava no **CERN (Organização Europeia para a Pesquisa Nuclear)**, enfrentava um problema: pesquisadores do mundo inteiro produziam documentos em diferentes computadores e formatos, tornando difícil compartilhar informações.
+Em **1989**, o cientista britânico **[Tim Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee)**, que trabalhava no **[CERN (Organização Europeia para a Pesquisa Nuclear)](https://pt.wikipedia.org/wiki/Organiza%C3%A7%C3%A3o_Europeia_para_a_Investiga%C3%A7%C3%A3o_Nuclear)**, enfrentava um problema: pesquisadores do mundo inteiro produziam documentos em diferentes computadores e formatos, tornando difícil compartilhar informações.
 
 Para solucionar esse problema, ele propôs um sistema baseado em documentos interligados por hiperlinks.
 
 Desse projeto nasceram três tecnologias fundamentais:
 
-- **HTML (HyperText Markup Language)**, linguagem utilizada para estruturar páginas da Web;
-- **HTTP (HyperText Transfer Protocol)**, protocolo responsável pela comunicação entre navegadores e servidores Web;
-- **URL (Uniform Resource Locator)**, sistema de endereçamento utilizado para localizar páginas na Internet.
+- **[HTML (HyperText Markup Language)](https://pt.wikipedia.org/wiki/HTML)**, linguagem utilizada para estruturar páginas da Web;
+- **[HTTP (HyperText Transfer Protocol)](https://pt.wikipedia.org/wiki/HTTP)**, protocolo responsável pela comunicação entre navegadores e servidores Web;
+- **[URL (Uniform Resource Locator)](https://pt.wikipedia.org/wiki/URL)**, sistema de endereçamento utilizado para localizar páginas na Internet.
 
-Em **1990**, Tim Berners-Lee também desenvolveu o primeiro navegador da história, chamado **WorldWideWeb**, que posteriormente foi renomeado para **Nexus**.
+Em **1990**, [Tim Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee) também desenvolveu o primeiro navegador da história, chamado **[WorldWideWeb](https://pt.wikipedia.org/wiki/WorldWideWeb)**, que posteriormente foi renomeado para **Nexus**.
 
-Alguns anos depois surgiu o **Mosaic**, desenvolvido por Marc Andreessen e sua equipe. Foi o primeiro navegador gráfico a se popularizar, tornando a navegação muito mais simples e contribuindo para a rápida expansão da Web.
+Alguns anos depois surgiu o **Mosaic**, desenvolvido por [Marc Andreessen](https://pt.wikipedia.org/wiki/Marc_Andreessen) e sua equipe. Foi o primeiro navegador gráfico a se popularizar, tornando a navegação muito mais simples e contribuindo para a rápida expansão da Web.
 
-Graças ao HTML, ao HTTP, às URLs e aos navegadores, nasceu a **World Wide Web**, revolucionando a forma como utilizamos a Internet.
+Graças ao HTML, ao HTTP, às URLs e aos navegadores, nasceu a **[World Wide Web (WWW)](https://pt.wikipedia.org/wiki/World_Wide_Web)**, revolucionando a forma como utilizamos a Internet.
 
 ---
 
@@ -158,15 +160,18 @@ Já a **World Wide Web (WWW)** é apenas um dos serviços que funciona sobre ess
 
 Além da Web, existem diversos outros serviços disponíveis na Internet, como:
 
-- **FTP (File Transfer Protocol)**, utilizado para transferência de arquivos;
-- **SMTP**, responsável pelo envio de e-mails;
-- **POP3** e **IMAP**, utilizados para receber e sincronizar mensagens de e-mail;
-- **DNS**, responsável por converter nomes de domínio em endereços IP;
+- **[FTP (File Transfer Protocol)](https://pt.wikipedia.org/wiki/Protocolo_de_Transfer%C3%AAncia_de_Arquivos)**, utilizado para transferência de arquivos;
+- **[SMTP](https://pt.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)**, responsável pelo envio de e-mails;
+- **[POP3](https://pt.wikipedia.org/wiki/Post_Office_Protocol)** e **[IMAP](https://pt.wikipedia.org/wiki/Internet_Message_Access_Protocol)**, utilizados para receber e sincronizar mensagens de e-mail;
+- **[DNS](https://pt.wikipedia.org/wiki/Sistema_de_Nomes_de_Dom%C3%ADnio)**, responsável por converter nomes de domínio em endereços IP;
 - entre vários outros.
 
-Os servidores Web utilizam principalmente o protocolo **HTTP** (ou sua versão segura, **HTTPS**) para disponibilizar páginas aos usuários.
+Os servidores Web utilizam principalmente o protocolo **HTTP** (ou sua versão segura, **[HTTPS](https://pt.wikipedia.org/wiki/HTTPS)**) para disponibilizar páginas aos usuários.
 
-Em resumo:
+---
 
-- **Internet** é a infraestrutura que conecta computadores no mundo inteiro.
-- **World Wide Web (WWW)** é um dos serviços que utiliza essa infraestrutura para disponibilizar páginas e sites acessados pelos navegadores.
+## Saiba Mais
+
+Se você ficou curioso para entender como a Internet atravessa oceanos, vale a pena assistir ao vídeo do [Manual do Mundo](https://www.youtube.com/watch?v=fYJl-7jRzuw&t), que mostra como funcionam os cabos submarinos de fibra óptica, como eles são instalados no fundo do mar e por que eles são tão importantes para a comunicação mundial. O vídeo também desmistifica a ideia de que a maior parte da Internet funciona por satélites.
+
+Outra recomendação é o episódio da série ["Que bom que você perguntou" (Glad You Asked)](https://www.youtube.com/watch?v=TNQsmPf24go), produzido pela Vox em parceria com o YouTube. O documentário explica, de forma simples e com ótimas animações, como os dados são divididos em pacotes, percorrem diferentes caminhos pela Internet e chegam ao destino, onde são reorganizados para reconstruir a informação original. É um excelente complemento para compreender o funcionamento do protocolo TCP/IP na prática.
