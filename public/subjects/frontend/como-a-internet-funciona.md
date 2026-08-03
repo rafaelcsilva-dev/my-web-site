@@ -1,177 +1,90 @@
-# Como a internet funciona?
+# Como a Internet Funciona?
 
-**Autor:** dev.rafael &bull; **Publicado:** 27 de Julho de 2026 &bull; **Leitura:** 10 min
+## 1. Representação de Dados
 
-## Como a internet surgiu?
+Um computador é um equipamento eletrônico. Por conta disso, ele trabalha exclusivamente com sinais elétricos que, na computação, são representados pelos numerais **`0`** e **`1`**.
 
-A Internet surgiu durante um dos períodos mais tensos da história da humanidade: a **[Guerra Fria](https://pt.wikipedia.org/wiki/Guerra_Fria)**. Esse conflito, que começou após a Segunda Guerra Mundial, colocou duas grandes potências em disputa: os **Estados Unidos** e a **União Soviética**.
+Esses numerais são **abstrações de ondas quadradas**:
 
-Apesar de não haver confrontos diretos entre os dois países, existia uma intensa corrida tecnológica, científica e militar. Cada lado buscava demonstrar superioridade em relação ao outro.
+- **`0`**: Ausência de sinal elétrico.
+- **`1`**: Presença de sinal elétrico.
 
-Em **1957**, a União Soviética lançou o **[Sputnik 1](https://pt.wikipedia.org/wiki/Sputnik-1)**, o primeiro satélite artificial da história. Sua principal função era apenas orbitar a Terra e transmitir sinais de rádio (os famosos "bips"), servindo como demonstração da capacidade tecnológica soviética.
+Esse sistema é chamado de **binário** ou, simplificando, **bits** (_binary digits_). Todo computador funciona com base nessa lógica.
 
-O lançamento do Sputnik causou grande preocupação nos Estados Unidos. Temendo que os soviéticos estivessem tecnologicamente muito à frente, o governo americano criou, em **1958**, a **[DARPA (Defense Advanced Research Projects Agency)](https://pt.wikipedia.org/wiki/Ag%C3%AAncia_de_Projetos_de_Pesquisa_Avan%C3%A7ada_de_Defesa)**, uma agência dedicada ao desenvolvimento de tecnologias estratégicas para fins militares.
+### Do Bit ao Byte
 
-Uma das preocupações da DARPA era garantir que informações importantes não fossem perdidas caso uma base militar fosse destruída durante um possível ataque. A solução encontrada foi criar uma rede de computadores capaz de compartilhar informações entre diferentes centros de pesquisa, de forma que todos possuíssem cópias dos dados.
+Um único bit (`0` ou `1`) é muito limitado para representar informações complexas. Para resolver isso, a computação reúne um conjunto de **8 bits**, que é a porção mínima necessária para representar um dado compreensível. A esse conjunto damos o nome de **Byte**.
 
-Foi assim que nasceu a **[ARPANET](https://pt.wikipedia.org/wiki/ARPANET)**, considerada a precursora da Internet.
+> **1 Byte = 8 bits**
 
-Inicialmente, a ARPANET possuía apenas quatro computadores conectados:
+Por exemplo, para representar a letra **"A"** no alfabeto, os componentes eletrônicos processam a seguinte sequência:
+`01000001` = **A**
 
-- Universidade da Califórnia em Los Angeles (UCLA) – SDS Sigma 7;
-- Stanford Research Institute (SRI) – SDS 940;
-- Universidade da Califórnia em Santa Bárbara (UCSB) – IBM 360/75;
-- Universidade de Utah – DEC PDP-10.
+Quando você digita a letra **"A"** no seu teclado, o hardware processa exatamente essa combinação de sinais e ausências de sinal elétrico.
 
-O objetivo principal dessa rede era permitir o compartilhamento de informações e garantir a existência de cópias de segurança (backup) das pesquisas realizadas.
-
----
-
-## O surgimento dos protocolos de comunicação
-
-Os computadores utilizados na ARPANET eram fabricados por empresas diferentes e utilizavam sistemas distintos. Isso significava que eles não conseguiam se comunicar diretamente.
-
-Para resolver esse problema, foi criado o **[NCP (Network Control Protocol)](https://pt.wikipedia.org/wiki/NCP)**, o primeiro protocolo de comunicação da ARPANET.
-
-O NCP estabelecia uma linguagem comum entre os computadores, permitindo a troca de informações independentemente do fabricante.
-
-Entretanto, esse protocolo possuía algumas limitações. Sempre que duas máquinas iniciavam uma transmissão, boa parte da rede ficava ocupada até que a comunicação terminasse.
-
-Enquanto a ARPANET possuía apenas quatro computadores, isso não representava um grande problema. Porém, conforme novas universidades e centros de pesquisa passaram a integrar a rede, essa limitação tornou-se cada vez mais evidente.
-
-Na década de 1970, dois pesquisadores desenvolveram tecnologias que mudariam completamente o funcionamento da Internet.
-
-### Bob Kahn
-
-[Bob Kahn](https://pt.wikipedia.org/wiki/Robert_Kahn) criou o **[TCP (Transmission Control Protocol)](https://pt.wikipedia.org/wiki/Protocolo_de_Controle_de_Transmiss%C3%A3o)**.
-
-Sua principal ideia era dividir grandes arquivos em pequenos pedaços chamados **pacotes**, permitindo que várias transmissões ocorressem simultaneamente na rede.
-
-### Vint Cerf
-
-[Vint Cerf](https://pt.wikipedia.org/wiki/Vint_Cerf) desenvolveu o **[IP (Internet Protocol)](https://pt.wikipedia.org/wiki/Protocolo_de_Internet)**.
-
-O IP é responsável por identificar cada computador conectado à rede por meio de um endereço único, permitindo que os pacotes encontrem corretamente seu destino.
-
-A união dessas duas tecnologias originou o protocolo **[TCP/IP](https://pt.wikipedia.org/wiki/TCP/IP)**, que continua sendo utilizado até hoje, embora tenha passado por inúmeras evoluções ao longo das décadas.
-
-Em **1º de janeiro de 1983**, conhecido como o **Flag Day**, toda a ARPANET passou oficialmente a utilizar o TCP/IP.
+Para consultar como caracteres, símbolos e letras são mapeados em bits, você pode acessar a [Tabela de Representação do Código UTF-8](https://www.ibm.com/docs/pt-br/aix/7.3.0?topic=8-utf-ucs-transformation-format).
 
 ---
 
-## O nascimento da Internet
+## 2. Unidades de Medida e Múltiplos
 
-Com o passar dos anos, a ARPANET cresceu rapidamente.
+Assim como o metro tem o quilômetro e o grama tem o quilograma, o Byte também tem os seus múltiplos. No entanto, enquanto o sistema decimal usa a base 10, **a computação utiliza a base 2** (sistema binário).
 
-Ela passou a conectar universidades, centros de pesquisa, empresas e até instituições localizadas em outros países por meio de enlaces via satélite.
+Por esse motivo, as conversões de memória acontecem em potências de 2, sendo _2^{10} = 1024_:
 
-Em determinado momento, a rede tornou-se grande demais para ser administrada exclusivamente pelos militares.
+- **Byte:** 8 bits
+- **Kilobyte (KB):** 1024 Bytes
+- **Megabyte (MB):** 1024 KB
+- **Gigabyte (GB):** 1024 MB
+- **Terabyte (TB):** 1024 GB
 
-Por isso, ela foi dividida em diferentes redes:
+### A diferença entre B (Byte) e b (bit)
 
-- **[MILNET](https://pt.wikipedia.org/wiki/MILNET)**, destinada às comunicações militares;
-- **[NSFNET (National Science Foundation Network)](https://pt.wikipedia.org/wiki/National_Science_Foundation_Network)**, voltada para universidades e pesquisa científica;
-- outras redes comerciais.
+A grafia da sigla faz toda a diferença no contexto da tecnologia:
 
-Essas redes precisavam se comunicar entre si. Assim surgiu o conceito de uma **rede de redes**, conhecido como **internetworking**.
+**Byte (B):** - Armazenamento de dados
 
-Com o tempo, esse nome foi simplificado para **Internet**, termo que utilizamos até hoje.
+- Pendrive de 16 GB, hd de 320GB
 
----
+**Bit (b):** = Transmissão de dados
 
-## Como a Internet funciona atualmente?
-
-Hoje a Internet é uma enorme rede mundial formada pela interligação de milhares de redes menores.
-
-Grande parte dessa comunicação internacional ocorre através de **cabos submarinos de fibra óptica**, instalados no fundo dos oceanos e responsáveis por transportar praticamente todo o tráfego entre os continentes.
-
-É possível visualizar esses cabos no site **[Submarine Cable Map](https://www.submarinecablemap.com/)**.
-
-Dentro de cada país, a distribuição da Internet é realizada por diferentes tecnologias, como:
-
-- fibras ópticas;
-- antenas de telefonia celular;
-- enlaces via rádio;
-- conexões via satélite.
+- Placa de rede de 100Mb, internet de 300Mb
 
 ---
 
-## Cliente e Servidor
+## 3. Como nos Conectamos à Internet?
 
-Para entender o funcionamento da Internet, é importante conhecer o modelo **cliente-servidor**.
+A arquitetura da internet é dividida em duas partes fundamentais:
 
-O seu computador (ou celular) funciona como um **cliente**, ou seja, ele solicita informações.
+1. **Cliente:** O dispositivo (seu celular, computador, TV) que solicita os dados.
+2. **Servidor:** O computador remoto onde os dados solicitados estão guardados.
 
-Já o **servidor** é um computador responsável por armazenar os dados que você deseja acessar, como páginas da web, imagens, vídeos ou arquivos.
+### O papel do MODEM
 
-Quando você solicita um conteúdo, ocorre o seguinte processo:
+Para conectar seu dispositivo à rede local e à internet, são utilizados aparelhos de transmissão de dados. Aqui surge um obstáculo físico:
 
-1. O IP identifica o endereço do computador que fará a comunicação.
-2. O TCP divide o arquivo em diversos pequenos pacotes.
-3. Esses pacotes podem seguir caminhos diferentes pela Internet.
-4. Ao chegarem ao computador do usuário, o TCP reorganiza todos os pacotes na ordem correta.
-5. O arquivo original é reconstruído.
+- O **computador** entende apenas sinais digitais (código binário = onda quadrada).
+- Os **meios de transmissão** (cabos telefônicos, fibra óptica, ar) transmitem sinais analógicos (onda senoidal).
 
-Esse processo acontece em poucos milissegundos.
+Para resolver essa incompatibilidade, entra em ação o aparelho responsável pela conversão do sinal:
 
-Em conexões mais lentas, é comum perceber uma imagem sendo carregada aos poucos. Isso ocorre porque os pacotes ainda estão chegando e sendo reconstruídos pelo computador.
+**MO**dulação + **DEM**odulação = **MODEM**
 
----
-
-## Como era a Internet antigamente?
-
-A Internet era muito diferente da que conhecemos atualmente.
-
-Não existiam páginas cheias de imagens, vídeos ou animações. A maior parte da navegação era feita apenas por texto.
-
-Caso o usuário desejasse visualizar uma imagem, normalmente precisava baixá-la primeiro para depois abri-la em um programa gráfico instalado no computador.
+- **Modulação:** Converte a onda quadrada (digital) em onda senoidal (analógica) para envio.
+- **Demodulação:** Converte a onda senoidal recebida de volta em onda quadrada para o computador processar.
 
 ---
 
-## O surgimento da World Wide Web
+## 4. Como Acessamos um Servidor?
 
-Embora muitas pessoas confundam os dois conceitos, **Internet** e não são a mesma coisa.
+Sites como o YouTube nada mais são do que grandes conjuntos de dados (textos, imagens, áudios, vídeos) armazenados na forma de bytes em computadores chamados **servidores**.
 
-Em **1989**, o cientista britânico **[Tim Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee)**, que trabalhava no **[CERN (Organização Europeia para a Pesquisa Nuclear)](https://pt.wikipedia.org/wiki/Organiza%C3%A7%C3%A3o_Europeia_para_a_Investiga%C3%A7%C3%A3o_Nuclear)**, enfrentava um problema: pesquisadores do mundo inteiro produziam documentos em diferentes computadores e formatos, tornando difícil compartilhar informações.
+Na internet, esses servidores não são localizados originalmente pelos seus nomes (como `youtube.com`), mas sim por um endereço numérico chamado **Endereço IP** (_Internet Protocol_).
 
-Para solucionar esse problema, ele propôs um sistema baseado em documentos interligados por hiperlinks.
+- Todos os dispositivos conectados à rede possuem um IP.
+- Você pode verificar o seu endereço de acesso através de ferramentas como o [IP Location](https://www.iplocation.net/).
+- O IP residencial fornecido pelas operadoras costuma ser **público e dinâmico** (muda ao reiniciar o modem).
 
-Desse projeto nasceram três tecnologias fundamentais:
+### O "Telefone" da Internet: O Servidor DNS
 
-- **[HTML (HyperText Markup Language)](https://pt.wikipedia.org/wiki/HTML)**, linguagem utilizada para estruturar páginas da Web;
-- **[HTTP (HyperText Transfer Protocol)](https://pt.wikipedia.org/wiki/HTTP)**, protocolo responsável pela comunicação entre navegadores e servidores Web;
-- **[URL (Uniform Resource Locator)](https://pt.wikipedia.org/wiki/URL)**, sistema de endereçamento utilizado para localizar páginas na Internet.
-
-Em **1990**, [Tim Berners-Lee](https://pt.wikipedia.org/wiki/Tim_Berners-Lee) também desenvolveu o primeiro navegador da história, chamado **[WorldWideWeb](https://pt.wikipedia.org/wiki/WorldWideWeb)**, que posteriormente foi renomeado para **Nexus**.
-
-Alguns anos depois surgiu o **Mosaic**, desenvolvido por [Marc Andreessen](https://pt.wikipedia.org/wiki/Marc_Andreessen) e sua equipe. Foi o primeiro navegador gráfico a se popularizar, tornando a navegação muito mais simples e contribuindo para a rápida expansão da Web.
-
-Graças ao HTML, ao HTTP, às URLs e aos navegadores, nasceu a **[World Wide Web (WWW)](https://pt.wikipedia.org/wiki/World_Wide_Web)**, revolucionando a forma como utilizamos a Internet.
-
----
-
-# O que é a World Wide Web?
-
-É muito comum ouvir que Internet e World Wide Web são sinônimos, mas isso não é correto.
-
-A **Internet** é toda a infraestrutura de redes e computadores conectados ao redor do mundo.
-
-Já a **World Wide Web (WWW)** é apenas um dos serviços que funciona sobre essa infraestrutura.
-
-Além da Web, existem diversos outros serviços disponíveis na Internet, como:
-
-- **[FTP (File Transfer Protocol)](https://pt.wikipedia.org/wiki/Protocolo_de_Transfer%C3%AAncia_de_Arquivos)**, utilizado para transferência de arquivos;
-- **[SMTP](https://pt.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol)**, responsável pelo envio de e-mails;
-- **[POP3](https://pt.wikipedia.org/wiki/Post_Office_Protocol)** e **[IMAP](https://pt.wikipedia.org/wiki/Internet_Message_Access_Protocol)**, utilizados para receber e sincronizar mensagens de e-mail;
-- **[DNS](https://pt.wikipedia.org/wiki/Sistema_de_Nomes_de_Dom%C3%ADnio)**, responsável por converter nomes de domínio em endereços IP;
-- entre vários outros.
-
-Os servidores Web utilizam principalmente o protocolo **HTTP** (ou sua versão segura, **[HTTPS](https://pt.wikipedia.org/wiki/HTTPS)**) para disponibilizar páginas aos usuários.
-
----
-
-## Saiba Mais
-
-Se você ficou curioso para entender como a Internet atravessa oceanos, vale a pena assistir ao vídeo do [Manual do Mundo](https://www.youtube.com/watch?v=fYJl-7jRzuw&t), que mostra como funcionam os cabos submarinos de fibra óptica, como eles são instalados no fundo do mar e por que eles são tão importantes para a comunicação mundial. O vídeo também desmistifica a ideia de que a maior parte da Internet funciona por satélites.
-
-Outra recomendação é o episódio da série ["Que bom que você perguntou" (Glad You Asked)](https://www.youtube.com/watch?v=TNQsmPf24go), produzido pela Vox em parceria com o YouTube. O documentário explica, de forma simples e com ótimas animações, como os dados são divididos em pacotes, percorrem diferentes caminhos pela Internet e chegam ao destino, onde são reorganizados para reconstruir a informação original. É um excelente complemento para compreender o funcionamento do protocolo TCP/IP na prática.
+Decorar sequências numéricas de IP para cada site que queremos visitar seria inviável. Para solucionar isso, a internet utiliza uma espécie de "agenda de contatos" chamada **DNS** (_Domain Name System_).

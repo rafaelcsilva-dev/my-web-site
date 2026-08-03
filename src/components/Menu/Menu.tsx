@@ -74,17 +74,23 @@ export default function Menu() {
           <span>PALLETE</span>
 
           <div className="palette-container">
-            {["cyber", "matrix", "amber", "space", "steel", "virus"].map(
-              (theme) => (
-                <button
-                  key={theme}
-                  className={activeTheme === theme ? "btn-active" : ""}
-                  onClick={() => changePalette(theme)}
-                >
-                  {theme.toUpperCase()}
-                </button>
-              ),
-            )}
+            {[
+              "cyber",
+              "matrix",
+              "amber",
+              "space",
+              "steel",
+              "virus",
+              "amethyst",
+            ].map((theme) => (
+              <button
+                key={theme}
+                className={activeTheme === theme ? "btn-active" : ""}
+                onClick={() => changePalette(theme)}
+              >
+                {theme.toUpperCase()}
+              </button>
+            ))}
           </div>
         </footer>
       </div>

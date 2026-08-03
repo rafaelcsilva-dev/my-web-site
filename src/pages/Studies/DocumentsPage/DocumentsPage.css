@@ -6,6 +6,7 @@
   font-family: var(--font);
 
   & button {
+    width: fit-content;
     margin-bottom: var(--s4);
 
     color: var(--color-secondary);
