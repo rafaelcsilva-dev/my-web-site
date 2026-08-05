@@ -22,9 +22,15 @@ export default function DocumentsPage({
 
       <ReactMarkdown>{document}</ReactMarkdown>
 
-      <button onClick={() => navigate(`/studies/${subject}`)}>
-        [&#60;&#60; voltar]
-      </button>
+      <div>
+        <button onClick={() => navigate(`/studies/${subject}`)}>
+          [&#60;&#60; voltar]
+        </button>
+
+        <button onClick={() => navigate(`/studies/${document}`)}>
+          [próximo &gt;&gt;]
+        </button>
+      </div>
     </div>
   );
 }

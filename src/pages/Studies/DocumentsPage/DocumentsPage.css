@@ -5,6 +5,12 @@
   color: var(--color-primary);
   font-family: var(--font);
 
+
+  & div { 
+    display: flex;
+    justify-content: space-between;
+  }
+
   & button {
     width: fit-content;
     margin-bottom: var(--s4);
