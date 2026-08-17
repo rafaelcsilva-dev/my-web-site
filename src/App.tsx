@@ -11,7 +11,7 @@ import Articles from "./pages/Articles/Articles.tsx";
 
 import Studies from "./pages/Studies/Studies.tsx";
 
-import Editor from "./pages/Studies/Editor/Editor.tsx";
+import Editor from "./pages/Studies/EditorPage/EditorPage.tsx";
 
 function App() {
   return (
@@ -33,13 +33,14 @@ function App() {
         {/*Disciplinas*/}
         <Route path="studies/:subjectId" element={<Studies />}></Route>
 
-        <Route path="studies/editor" element={<Editor />}></Route>
-
         {/*Documentos*/}
         <Route
-          path="studies/:subjectId/:documentId"
+          path="/studies/:subjectId/:topicId/:documentId"
           element={<Studies />}
-        ></Route>
+        />
+
+        {/*Editor de texto Markdown*/}
+        <Route path="studies/editor" element={<Editor />}></Route>
 
         {/* Fallback de segurança */}
         <Route path="*" element={<Navigate to="/" replace />} />

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./Editor.css";
+import "./EditorPage.css";
 
 import Nav from "../../../components/Nav/Nav";
 import Menu from "../../../components/Menu/Menu";

@@ -27,7 +27,7 @@ export default function DocumentsPage({
           [&#60;&#60; voltar]
         </button>
 
-        <button onClick={() => navigate(`/studies/${document}`)}>
+        <button onClick={() => navigate(`/studies/${subject}`)}>
           [próximo &gt;&gt;]
         </button>
       </div>

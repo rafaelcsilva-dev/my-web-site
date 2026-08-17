@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./SubjectPage.css";
 
 import SearchBar from "../../../components/SearchBar/SearchBar";
-import NodeSubject from "../NodeSubject/NodeSubject";
+import NodeSubject from "../../../components/NodeSubject/NodeSubject";
 
 interface SubjectPageProps {
   subjects: any[];
