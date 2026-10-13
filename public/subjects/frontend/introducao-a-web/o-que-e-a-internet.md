@@ -170,8 +170,7 @@ Os servidores Web utilizam principalmente o protocolo **HTTP** (ou sua versão s
 
 ---
 
-## Saiba Mais
 
-Se você ficou curioso para entender como a Internet atravessa oceanos, vale a pena assistir ao vídeo do [Manual do Mundo](https://www.youtube.com/watch?v=fYJl-7jRzuw&t), que mostra como funcionam os cabos submarinos de fibra óptica, como eles são instalados no fundo do mar e por que eles são tão importantes para a comunicação mundial. O vídeo também desmistifica a ideia de que a maior parte da Internet funciona por satélites.
-
-Outra recomendação é o episódio da série ["Que bom que você perguntou" (Glad You Asked)](https://www.youtube.com/watch?v=TNQsmPf24go), produzido pela Vox em parceria com o YouTube. O documentário explica, de forma simples e com ótimas animações, como os dados são divididos em pacotes, percorrem diferentes caminhos pela Internet e chegam ao destino, onde são reorganizados para reconstruir a informação original. É um excelente complemento para compreender o funcionamento do protocolo TCP/IP na prática.
+>Se você ficou curioso para entender como a Internet atravessa oceanos, vale a pena assistir ao vídeo do [Manual do Mundo](https://www.youtube.com/watch?v=fYJl-7jRzuw&t), que mostra como funcionam os cabos submarinos de fibra óptica, como eles são instalados no fundo do mar e por que eles são tão importantes para a comunicação mundial. O vídeo também desmistifica a ideia de que a maior parte da Internet funciona por satélites.
+>
+>Outra recomendação é o episódio da série ["Que bom que você perguntou" (Glad You Asked)](https://www.youtube.com/watch?v=TNQsmPf24go), produzido pela Vox em parceria com o YouTube. O documentário explica, de forma simples e com ótimas animações, como os dados são divididos em pacotes, percorrem diferentes caminhos pela Internet e chegam ao destino, onde são reorganizados para reconstruir a informação original. É um excelente complemento para compreender o funcionamento do protocolo TCP/IP na prática.

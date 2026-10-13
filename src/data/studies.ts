@@ -1,8 +1,8 @@
 export const studies = [
+  //FRONTEND
   {
     title: "FRONTEND",
     path: "frontend",
-    id: "STU_001",
     date: "21/07/2026",
     topics: [
       {
@@ -42,4 +42,89 @@ export const studies = [
       },
     ],
   },
+
+  //ARQUITETURA DE COMPUTADORES
+  {
+    title: "ARQUITETURA DE COMPUTADORES",
+    path: "arquitetura-de-computadores",
+    date: "25/08/2026",
+    topics: [
+      {
+        title: "Introdução",
+        path: "introducao",
+        documents: [
+          {
+            name: "O Que é um Computador?",
+            path: "o-que-e-um-computador",
+            date: "26/08/2026",
+          },
+        ],
+      },
+    ],
+  },
+
+  //ENGENHARIA DE SOFTWARE
+  {
+    title: "ENGENHARIA DE SOFTWARE",
+    path: "engenharia-de-software",
+    date: "10/09/2026",
+    topics: [
+      {
+        title: "Introdução a Engenharia de Software",
+        path: "introducao-a-engenharia-de-software",
+        documents: [
+          {
+            name: "",
+            path: "",
+            date: "",
+          },
+        ],
+      },
+    ],
+  },
+
+  //SISTEMAS OPERACIONAIS
+  {
+    title: "SISTEMAS OPERACIONAIS",
+    path: "sistemas-operacionais",
+    date: "27/08/2026",
+    topics: [
+      {
+        title: "Introdução à SOs",
+        path: "introducao-a-SOs",
+        documents: [
+          {
+            name: "Como surgiram os sistemas operacionais",
+            path: "como-surgiram-os-sistemas-operacionais",
+            date: "17/08/2026",
+          },
+        ],
+      },
+    ],
+  },
 ];
+
+/*
+
+
+//NOME DA MATÉRIA
+  {
+    title: "",
+    path: "",
+    date: "",
+    topics: [
+      {
+        title: "s",
+        path: "",
+        documents: [
+          {
+            name: "",
+            path: "",
+            date: "",
+          },
+        ],
+      },
+    ],
+  },
+
+*/

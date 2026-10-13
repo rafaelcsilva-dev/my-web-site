@@ -18,27 +18,33 @@ export default function Home() {
 
       <div className="stack-container">
         <NodeStatic
-          meta="SYS_MODULE // CLIENT_SIDE_ENGINE"
-          title="Engenharia de Interface"
-          text="Desenvolvimento de aplicações SPA de alta performance utilizando ecossistemas modernos de renderização. Foco centralizado em semântica estrutural, arquitetura reativa de componentes, gerenciamento rigoroso de estados e design responsivo adaptável."
+          meta="01 // INTERFACE"
+          title="FRONTEND"
+          items={["React", "TypeScript", "Next.js", "Tailwind CSS", "Vite"]}
         />
 
         <NodeStatic
-          meta="SYS_MODULE // SERVER_SIDE_ENGINE"
-          title="Arquitetura de Serviços"
-          text="Construção, otimização e manutenção de servidores lógicos e ecossistemas de APIs robustas. Implementação de rotas assíncronas seguras, orquestração de bancos de dados relacionais e manipulação estruturada de requisições de rede."
+          meta="02 // SERVIDOR"
+          title="BACKEND"
+          items={["Node.js", "Express", "Supabase", "Python"]}
         />
 
         <NodeStatic
-          meta="CORE_SYS // REPOSITORY_CONTROL"
-          title="Controle de Código"
-          text="Gerenciamento do ciclo de vida do software por meio de sistemas distribuídos. Manutenção e integridade de bases de código complexas através de ramificações lógicas estratégicas, fluxos de integração e documentação detalhada de revisões."
+          meta="03 // AMBIENTE"
+          title="INFRA & DEVOPS"
+          items={["Git", "GitHub", "Vercel", "Render"]}
         />
 
         <NodeStatic
-          meta="CORE_SYS // USER_INTERFACE_PROTO"
-          title="Identidade e Prototipagem"
-          text="Idealização, conceituação e validação de layouts sistêmicos. Mapeamento matemático de escalas tipográficas, fluxos de experiência do usuário (UX) e design visual estruturado."
+          meta="04 // METODOLOGIA"
+          title="PARADIGMAS E CONCEITOS"
+          items={[
+            "Código Limpo",
+            "Componentização",
+            "Prototipagem",
+            "POO",
+            "Design System",
+          ]}
         />
       </div>
 

@@ -32,7 +32,7 @@ export default function SubjectPage({ subjects }: SubjectPageProps) {
           <NodeSubject
             key={i}
             title={e.title}
-            id={e.id}
+            id={`STU_00${i + 1}`}
             date={e.date}
             onClick={() => navigate(`/studies/${e.path}`)}
           />
