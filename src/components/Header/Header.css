@@ -12,18 +12,24 @@
   }
 
   & h1 {
+    display: inline-flex;
+    align-items: center;
+    
     color: var(--text-primary);
     text-shadow: 0 0 10px var(--color-primary);
     text-transform: uppercase;
-    display: inline-flex;
-    align-items: center;
+    font-size: var(--text-h1);
+
+    @media (max-width: 480px) {
+      font-size: var(--text-h3);
+    }
 
     &::after {
       content: "█";
       color: var(--text-primary);
       text-shadow: 0 0 10px var(--color-primary);
       margin-left: var(--s1);
-      font-size: var(--text-h1);
+      font-size: inherit;
       animation: terminal-blink 1.07s infinite steps(2, start);
     }
   }
