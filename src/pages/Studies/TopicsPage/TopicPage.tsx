@@ -5,7 +5,7 @@ import "./TopicPage.css";
 import NodeTopic from "../../../components/NodeTopic/NodeTopic";
 
 interface DocumentItem {
-  name: string;
+  title: string;
   path: string;
   date: string;
 }
@@ -41,7 +41,7 @@ export default function TopicPage({
               key={idx}
               onClick={() => onDocumentClick(t.path, d.path)}
             >
-              <span>{d.name}.md</span>
+              <span>{d.path}.md</span>
               <span>{d.date}</span>
             </div>
           ))}
