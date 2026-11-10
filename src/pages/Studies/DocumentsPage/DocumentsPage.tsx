@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import "./DocumentsPage.css";
 
@@ -17,14 +18,14 @@ export default function DocumentsPage({
   return (
     <div className="documents-page">
       <button onClick={() => navigate(`/studies/${subject}`)}>
-        [&#60;&#60; voltar]
+        [&lt;&lt; voltar]
       </button>
 
-      <ReactMarkdown>{document}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{document}</ReactMarkdown>
 
       <div>
         <button onClick={() => navigate(`/studies/${subject}`)}>
-          [&#60;&#60; voltar]
+          [&lt;&lt; voltar]
         </button>
 
         <button onClick={() => navigate(`/studies/${subject}`)}>
