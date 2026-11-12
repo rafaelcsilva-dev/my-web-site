@@ -17,21 +17,11 @@ export default function DocumentsPage({
 
   return (
     <div className="documents-page">
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{document}</ReactMarkdown>
+
       <button onClick={() => navigate(`/studies/${subject}`)}>
         [&lt;&lt; voltar]
       </button>
-
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{document}</ReactMarkdown>
-
-      <div>
-        <button onClick={() => navigate(`/studies/${subject}`)}>
-          [&lt;&lt; voltar]
-        </button>
-
-        <button onClick={() => navigate(`/studies/${subject}`)}>
-          [próximo &gt;&gt;]
-        </button>
-      </div>
     </div>
   );
 }
